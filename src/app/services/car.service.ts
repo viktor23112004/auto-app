@@ -21,5 +21,9 @@ export class CarService {
     return this.cars.find(car => car.id == id)
   }
 
-  constructor() { }
+  deleteCar(id: string) {
+    this.cars = this.cars.filter(car => car.id != id)
+  }
+
+  
 }

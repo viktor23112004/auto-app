@@ -34,7 +34,9 @@ export class MaintenanceComponent implements OnInit{
   }
 
   deleteCar(id: string) {
+    this.carService.deleteCar(id)
 
+    this.cars = this.cars.filter(car => car.id != id)
   }
 
   detailsCar(id: string) {
