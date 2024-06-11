@@ -5,8 +5,10 @@ import { FavoritesComponent } from './components/favorites/favorites.component';
 import { AuthPageComponent } from './pages/auth-page/auth-page.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { RegisterPageComponent } from './pages/register-page/register-page.component';
-import { NotFoundError } from 'rxjs';
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
+import { CarAddComponent } from './components/car-add/car-add.component';
+import { CarEditComponent } from './components/car-edit/car-edit.component';
+import { CarDetailsComponent } from './components/car-details/car-details.component';
 
 export const routes: Routes = [
 
@@ -17,7 +19,12 @@ export const routes: Routes = [
         path: 'auth', component: AuthPageComponent, children: [
             {path: 'home', component: HomeComponent},
             {path: 'maintenance', component: MaintenanceComponent},
-            {path: 'favorites', component: FavoritesComponent}
+            {path: 'favorites', component: FavoritesComponent},
+
+            //CRUD
+            {path: 'car-add', component: CarAddComponent},
+            {path: 'car-edit/:id', component: CarEditComponent},
+            {path: 'car-details/:id', component: CarDetailsComponent}
         ]
     },
 
