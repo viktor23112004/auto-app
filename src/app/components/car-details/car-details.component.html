@@ -1,1 +1,32 @@
-<p>car-details works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <button type="button" class="btn btn-outline-secondary mb-3" (click)="goBack()">Go back</button>
+        </div>
+
+        <div class="col-12">
+            <img src="{{car?.image}}" class="img-fluid w-100" alt="{{car?.name}}">
+        </div>
+
+        <div class="col-12">
+            <form>
+                <div class="mb-3">
+                    <label for="carid" class="form-label">ID:</label>
+                    <input type="text" class="form-control" id="carid" disabled readonly value="{{car?.id}}">
+                </div>
+                <div class="mb-3">
+                    <label for="carname" class="form-label">Car name:</label>
+                    <input type="text" class="form-control" id="carname" disabled readonly value="{{car?.name}}">
+                </div>
+                <div class="mb-3">
+                    <label for="carmodel" class="form-label">Car model:</label>
+                    <input type="text" class="form-control" id="carmodel" disabled readonly value="{{car?.model}}">
+                </div>
+                <div class="mb-3">
+                    <label for="carprice" class="form-label">Car price:</label>
+                    <input type="number" class="form-control" id="carprice" disabled readonly value="{{car?.price}}">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

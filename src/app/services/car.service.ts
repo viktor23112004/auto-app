@@ -17,5 +17,9 @@ export class CarService {
     new Car("8", "Tesla Model 3", "2022", 60000, "https://upload.wikimedia.org/wikipedia/commons/9/91/2019_Tesla_Model_3_Performance_AWD_Front.jpg")
   ]
 
+  getCar(id: string): Car | undefined {
+    return this.cars.find(car => car.id == id)
+  }
+
   constructor() { }
 }

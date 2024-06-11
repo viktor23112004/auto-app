@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { CarService } from '../../services/car.service';
+import { Car } from '../../models/car';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-car-details',
@@ -10,11 +13,24 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class CarDetailsComponent implements OnInit{
 
-  constructor(private route: ActivatedRoute) {}
+  car: Car | undefined = new Car('', '', '', 0, '')
+
+  constructor(private route: ActivatedRoute, 
+    private carService: CarService, 
+    private location: Location
+  ) {}
 
 
   ngOnInit(): void {
     let id: string = this.route.snapshot.params['id']
+
+    this.car = this.carService.getCar(id)
   }
+
+  goBack() {
+    this.location.back()
+  }
+
+  
 
 }
