@@ -3,14 +3,17 @@ import { CarService } from '../../services/car.service';
 import { Car } from '../../models/car';
 import { CurrencyPipe, NgFor } from '@angular/common';
 import { Router } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-maintenance',
   standalone: true,
   imports: [
     NgFor,
-    CurrencyPipe
+    CurrencyPipe,
+    HttpClientModule
   ],
+  providers: [CarService],
   templateUrl: './maintenance.component.html',
   styleUrl: './maintenance.component.css'
 })
@@ -22,8 +25,16 @@ export class MaintenanceComponent implements OnInit{
     private router: Router
   ) {}
 
+  getCarsList() {
+    this.carService.getCars().subscribe({
+      next: (data: Car[]) => {
+        this.cars = data
+      }
+    })
+  }
+
   ngOnInit(): void {
-    this.cars = this.carService.cars
+    this.getCarsList()
   }
 
   createCar() {
@@ -35,9 +46,12 @@ export class MaintenanceComponent implements OnInit{
   }
 
   deleteCar(id: string) {
-    this.carService.deleteCar(id)
-
-    this.cars = this.cars.filter(car => car.id != id)
+    this.carService.deleteCar(id).subscribe({
+      next: () => {
+        this.getCarsList()
+        // this.cars = this.cars.filter(car => car.id != id)
+      }
+    })
   }
 
   detailsCar(id: string) {

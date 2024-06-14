@@ -38,7 +38,7 @@ export class CarAddComponent {
       let {name, model, price, image} = this.addCarForm.value
       const car = new Car(`${Date.now()}`, name, model, price, image)
 
-      this.carService.addCar(car)
+      // this.carService.addCar(car)
 
       this.router.navigate(['/auth/maintenance'])
     }
