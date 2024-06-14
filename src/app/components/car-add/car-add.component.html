@@ -1,1 +1,62 @@
-<p>car-add works!</p>
+<div class="container">
+    <form [formGroup]="addCarForm" 
+        novalidate 
+        (ngSubmit)="addCar()"
+    >
+
+        <div class="mb-3">
+            <label for="name" class="form-label">Name:</label>
+            <input type="text" class="form-control" id="name" formControlName="name">
+            
+            <div class="mt-2 error"
+                *ngIf="addCarForm.controls['name'].invalid &&
+                (addCarForm.controls['name'].touched || addCarForm.controls['name'].dirty)">
+                Не вказано назву машини!
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="model" class="form-label">Model:</label>
+            <input type="text" class="form-control" id="model" formControlName="model">
+
+            <div class="mt-2 error"
+                *ngIf="addCarForm.controls['model'].invalid &&
+                (addCarForm.controls['model'].touched || addCarForm.controls['model'].dirty)">
+                Не вказано модель машини!
+            </div>
+        </div>        
+
+        <div class="mb-3">
+            <label for="price" class="form-label">Price:</label>
+            <input type="number" class="form-control" id="price" formControlName="price">
+            <div class="mt-2 error" *ngIf="addCarForm.controls['price'].invalid &&
+            (addCarForm.controls['price'].touched || addCarForm.controls['price'].dirty)">
+
+                <div *ngIf="addCarForm.controls['price'].errors &&
+            addCarForm.controls['price'].errors['required']">
+                    Не вказано ціну машини!
+                </div>
+
+                <div *ngIf="addCarForm.controls['price'].errors &&
+                addCarForm.controls['price'].errors['min']">
+                    Мінімальна сума машини - $1
+                </div>
+
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="image" class="form-label">Image:</label>
+            <input type="text" class="form-control" id="image" formControlName="image">
+
+            <div class="mt-2 error"
+                *ngIf="addCarForm.controls['image'].invalid &&
+                (addCarForm.controls['image'].touched || addCarForm.controls['image'].dirty)">
+                Не добавлено фото машини!
+            </div>
+        </div>
+
+        <button type="button" class="btn btn-outline-success me-2" (click)="goBack()">Back</button>
+        <button type="submit" class="btn btn-outline-success">Add car</button>
+    </form>
+</div>

@@ -3,13 +3,14 @@
 
     <div class="row">
         <div class="col-12">
-            <button type="button" class="btn btn-outline-success">Add new car</button>
+            <button type="button" class="btn btn-outline-success" (click)="createCar()">Add new car</button>
         </div>
 
         <div class="col-12">
             <table class="table">
                 <thead>
                   <tr>
+                    <th>ID</th>
                     <th>Name</th>
                     <th>Model</th>
                     <th>Price</th>
@@ -19,9 +20,10 @@
                 </thead>
                 <tbody>
                   <tr *ngFor="let car of cars">
+                    <th>{{car.id}}</th>
                     <th>{{car.name}}</th>
                     <td>{{car.model}}</td>
-                    <td>{{car.price}}</td>
+                    <td>{{car.price | currency}}</td>
                     <td>
                         <img src="{{car.image}}" alt="car_{{car.name}}" class="img-fluid" width="200px">
                     </td>

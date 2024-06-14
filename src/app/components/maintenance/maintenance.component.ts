@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { CarService } from '../../services/car.service';
 import { Car } from '../../models/car';
-import { NgFor } from '@angular/common';
+import { CurrencyPipe, NgFor } from '@angular/common';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-maintenance',
   standalone: true,
   imports: [
-    NgFor
+    NgFor,
+    CurrencyPipe
   ],
   templateUrl: './maintenance.component.html',
   styleUrl: './maintenance.component.css'
@@ -26,7 +27,7 @@ export class MaintenanceComponent implements OnInit{
   }
 
   createCar() {
-
+    this.router.navigate(['/auth/car-add'])
   }
 
   editCar(id: string) {

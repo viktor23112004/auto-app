@@ -25,5 +25,9 @@ export class CarService {
     this.cars = this.cars.filter(car => car.id != id)
   }
 
+  addCar(car: Car) {
+    this.cars.push(car)
+  }
+
   
 }
