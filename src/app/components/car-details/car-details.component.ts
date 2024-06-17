@@ -29,11 +29,9 @@ export class CarDetailsComponent implements OnInit{
     let id: string = this.route.snapshot.params['id']
     this.carService.getCar(id).subscribe({
       next: (data: Car) => {
-        this.car = data
-        
+        this.car = data        
       }
     })
-    // this.car = this.carService.getCar(id)
   }
 
   goBack() {

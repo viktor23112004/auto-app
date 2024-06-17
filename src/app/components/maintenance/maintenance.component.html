@@ -6,6 +6,11 @@
             <button type="button" class="btn btn-outline-success" (click)="createCar()">Add new car</button>
         </div>
 
+        <!-- Search -->
+         <div class="col-12">
+            <app-search-box (onChanged)="searchChanged($event)"></app-search-box>
+         </div>
+
         <div class="col-12">
             <table class="table">
                 <thead>
@@ -19,7 +24,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let car of cars">
+                  <tr *ngFor="let car of cars | search:searchStr">
                     <th>{{car.id}}</th>
                     <th>{{car.name}}</th>
                     <td>{{car.model}}</td>

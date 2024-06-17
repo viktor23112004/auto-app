@@ -1,9 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CarService } from '../../services/car.service';
 import { Car } from '../../models/car';
 import { CurrencyPipe, NgFor } from '@angular/common';
 import { Router } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { SearchPipe } from '../../pipes/search.pipe';
+import { SearchBoxComponent } from '../search-box/search-box.component';
 
 @Component({
   selector: 'app-maintenance',
@@ -11,7 +13,9 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     NgFor,
     CurrencyPipe,
-    HttpClientModule
+    HttpClientModule,
+    SearchPipe,
+    SearchBoxComponent
   ],
   providers: [CarService],
   templateUrl: './maintenance.component.html',
@@ -19,7 +23,9 @@ import { HttpClientModule } from '@angular/common/http';
 })
 export class MaintenanceComponent implements OnInit{
 
-  cars: Car[] = []
+  @Input() searchStr: string = ""
+
+  cars: Car[] = []  
 
   constructor (private carService: CarService, 
     private router: Router
@@ -57,6 +63,11 @@ export class MaintenanceComponent implements OnInit{
 
   detailsCar(id: string) {
     this.router.navigate(['/auth/car-details', id])
+  }
+
+
+  searchChanged(str: string) {
+    this.searchStr = str
   }
 
 }
