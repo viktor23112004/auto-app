@@ -1,61 +1,60 @@
 {
   "cars": [
-      {   
-          "id": "1", 
-          "name": "Toyota Camry", 
-          "model": "2022", 
-          "price": 30000, 
-          "image": "https://upload.wikimedia.org/wikipedia/commons/f/fd/2025_Toyota_Camry_Hybrid_XSE_%28United_States%29_front_view.png"
-      },
-      {   
-          "id": "2", 
-          "name": "Honda Accord", 
-          "model": "2022", 
-          "price": 32000, 
-          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Honda_Accord_%28CV3%29_EX_eHEV%2C_2021%2C_front.jpg/280px-Honda_Accord_%28CV3%29_EX_eHEV%2C_2021%2C_front.jpg"
-      },
-      {   
-          "id": "3", 
-          "name": "Ford Mustang", 
-          "model": "2022", 
-          "price": 45000, 
-          "image": "https://upload.wikimedia.org/wikipedia/commons/3/34/2024_Ford_Mustang_Dark_Horse.jpg"
-      },
-      {   
-          "id": "4", 
-          "name": "Chevrolet Silverado", 
-          "model": "2022", 
-          "price": 40000, 
-          "image": "https://upload.wikimedia.org/wikipedia/commons/2/26/2022_Chevrolet_Silverado_K1500_LT-L%2C_front_4.24.23.jpg"
-      },
-      {   
-          "id": "5", 
-          "name": "BMW 3 Series", 
-          "model": "2022", 
-          "price": 50000, 
-          "image": "https://www.topgear.com/sites/default/files/2022/09/1-BMW-3-Series.jpg"
-      },
-      {   
-          "id": "6", 
-          "name": "Audi A4", 
-          "model": "2022", 
-          "price": 48000, 
-          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Audi_A4_B9_sedans_%28FL%29_1X7A2441.jpg/1200px-Audi_A4_B9_sedans_%28FL%29_1X7A2441.jpg"
-      },
-      {   
-          "id": "7", 
-          "name": "Mercedes-Benz C-Class", 
-          "model": "2022", 
-          "price": 55000, 
-          "image": "https://upload.wikimedia.org/wikipedia/commons/b/be/Mercedes-Benz_W206_IMG_6380.jpg"
-      },
-      {   
-          "id": "8", 
-          "name": "Tesla Model 3", 
-          "model": "2022", 
-          "price": 60000, 
-          "image": "https://upload.wikimedia.org/wikipedia/commons/9/91/2019_Tesla_Model_3_Performance_AWD_Front.jpg"
-      }
-      
-    ]
+    {
+      "id": "1",
+      "name": "Toyota Camry",
+      "model": "2022",
+      "price": 30000,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/f/fd/2025_Toyota_Camry_Hybrid_XSE_%28United_States%29_front_view.png"
+    },
+    {
+      "id": "2",
+      "name": "Honda Accord",
+      "model": "2022",
+      "price": 32000,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Honda_Accord_%28CV3%29_EX_eHEV%2C_2021%2C_front.jpg/280px-Honda_Accord_%28CV3%29_EX_eHEV%2C_2021%2C_front.jpg"
+    },
+    {
+      "id": "3",
+      "name": "Ford Mustang",
+      "model": "2022",
+      "price": 45000,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/3/34/2024_Ford_Mustang_Dark_Horse.jpg"
+    },
+    {
+      "id": "4",
+      "name": "Chevrolet Silverado",
+      "model": "2022",
+      "price": 40000,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/2/26/2022_Chevrolet_Silverado_K1500_LT-L%2C_front_4.24.23.jpg"
+    },
+    {
+      "id": "5",
+      "name": "BMW 3 Series",
+      "model": "2022",
+      "price": 50000,
+      "image": "https://www.topgear.com/sites/default/files/2022/09/1-BMW-3-Series.jpg"
+    },
+    {
+      "id": "6",
+      "name": "Audi A4",
+      "model": "2022",
+      "price": 48000,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Audi_A4_B9_sedans_%28FL%29_1X7A2441.jpg/1200px-Audi_A4_B9_sedans_%28FL%29_1X7A2441.jpg"
+    },
+    {
+      "id": "7",
+      "name": "Mercedes-Benz C-Class",
+      "model": "2022",
+      "price": 55000,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/b/be/Mercedes-Benz_W206_IMG_6380.jpg"
+    },
+    {
+      "id": "8",
+      "name": "Tesla Model 3",
+      "model": "2022",
+      "price": 60000,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/9/91/2019_Tesla_Model_3_Performance_AWD_Front.jpg"
+    }
+  ]
 }

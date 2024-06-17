@@ -4,6 +4,7 @@ import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } 
 import { ActivatedRoute, Router } from '@angular/router';
 import { CarService } from '../../services/car.service';
 import { Car } from '../../models/car';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-car-add',
@@ -11,8 +12,10 @@ import { Car } from '../../models/car';
   imports: [
     FormsModule,
     ReactiveFormsModule,
-    NgIf
+    NgIf,
+    HttpClientModule,    
   ],
+  providers: [CarService],
   templateUrl: './car-add.component.html',
   styleUrl: './car-add.component.css'
 })
@@ -38,9 +41,11 @@ export class CarAddComponent {
       let {name, model, price, image} = this.addCarForm.value
       const car = new Car(`${Date.now()}`, name, model, price, image)
 
-      // this.carService.addCar(car)
-
-      this.router.navigate(['/auth/maintenance'])
+      this.carService.addCar(car).subscribe({
+        next: () => {
+          this.router.navigate(['/auth/maintenance'])
+        }
+      })
     }
   }
 

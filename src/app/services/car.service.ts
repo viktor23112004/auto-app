@@ -26,9 +26,9 @@ export class CarService {
   }
   
 
-  // addCar(car: Car) {
-  //   this.cars.push(car)
-  // }
+  addCar(car: Car): Observable<any> {
+    return this.http.post(this.url, car)
+  }
 
   
 }
