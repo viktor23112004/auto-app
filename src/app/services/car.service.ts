@@ -30,5 +30,10 @@ export class CarService {
     return this.http.post(this.url, car)
   }
 
+
+  editCar(id:string, car: Car): Observable<any> {
+    return this.http.put(`${this.url}/${id}`, car)
+  }
+
   
 }

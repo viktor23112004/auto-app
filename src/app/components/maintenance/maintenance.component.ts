@@ -42,7 +42,7 @@ export class MaintenanceComponent implements OnInit{
   }
 
   editCar(id: string) {
-
+    this.router.navigate(['/auth/car-edit', id])
   }
 
   deleteCar(id: string) {
@@ -53,6 +53,7 @@ export class MaintenanceComponent implements OnInit{
       }
     })
   }
+
 
   detailsCar(id: string) {
     this.router.navigate(['/auth/car-details', id])

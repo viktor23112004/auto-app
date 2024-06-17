@@ -1,1 +1,62 @@
-<p>car-edit works!</p>
+<div class="container">
+
+    <div class="col-12 text-center">
+        <img src="{{car.image}}" class="img-fluid w-50" alt="{{car.name}}">
+    </div>
+
+    <form [formGroup]="editCarForm" (ngSubmit)="submitEdit()">
+        <div class="mb-3">
+            <label for="name" class="form-label">Id:</label>
+            <input type="text" class="form-control"  value="{{car.id}}" id="id" disabled >
+           
+        </div>
+        <div class="mb-3">
+            <label for="name" class="form-label">Name:</label>
+            <input type="text" class="form-control"  id="name" formControlName="name" value="{{car.name}}">
+            <div class="mt-2 error" *ngIf="editCarForm.controls['name'].invalid &&
+                        (editCarForm.controls['name'].touched || editCarForm.controls['name'].dirty)">
+                Не вказано назву машини!
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="model" class="form-label">Model:</label>
+            <input type="text" class="form-control"  id="model" formControlName="model" value="{{car.model}}">
+            <div class="mt-2 error" *ngIf="editCarForm.controls['model'].invalid &&
+            (editCarForm.controls['model'].touched || editCarForm.controls['model'].dirty)">
+                Не вказано модель машини!
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="price" class="form-label">Price:</label>
+            <input type="number" class="form-control" id="price" formControlName="price" value="{{car.price}}">
+            <div class="mt-2 error" *ngIf="editCarForm.controls['price'].invalid &&
+            (editCarForm.controls['price'].touched || editCarForm.controls['price'].dirty)">
+
+                <div *ngIf="editCarForm.controls['price'].errors &&
+            editCarForm.controls['price'].errors['required']">
+                    Не вказано ціну машини!
+                </div>
+
+                <div *ngIf="editCarForm.controls['price'].errors &&
+                editCarForm.controls['price'].errors['min']">
+                    Мінімальна сума машини - 1$
+                </div>
+
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="image" class="form-label">Image:</label>
+            <input type="text" class="form-control" id="image" formControlName="image" value="{{car.image}}">
+            <div class="mt-2 error" *ngIf="editCarForm.controls['image'].invalid &&
+            (editCarForm.controls['image'].touched || editCarForm.controls['image'].dirty)">
+                Не вказано фото машини!
+            </div>
+        </div>
+
+        <button type="button" class="btn btn-outline-success me-2" (click)="goBack()">Back</button>
+        <button type="submit" class="btn btn-outline-success">Edit car</button>
+    </form>
+</div>

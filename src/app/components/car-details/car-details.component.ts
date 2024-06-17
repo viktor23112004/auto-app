@@ -17,7 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
 })
 export class CarDetailsComponent implements OnInit{
 
-  car: Car | undefined = new Car('', '', '', 0, '')
+  car: Car = new Car('', '', '', 0, '')
 
   constructor(private route: ActivatedRoute, 
     private carService: CarService, 
