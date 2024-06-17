@@ -12,6 +12,7 @@ import { CarDetailsComponent } from './components/car-details/car-details.compon
 
 export const routes: Routes = [
 
+    {path: '', component: LoginPageComponent},
     {path: 'login', component: LoginPageComponent},
     {path: 'register', component: RegisterPageComponent},
 
