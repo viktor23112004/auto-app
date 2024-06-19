@@ -3,8 +3,8 @@
     {
       "id": "1",
       "name": "Toyota Camry",
-      "model": "2023",
-      "price": 30000,
+      "model": "2021",
+      "price": 29000,
       "image": "https://upload.wikimedia.org/wikipedia/commons/f/fd/2025_Toyota_Camry_Hybrid_XSE_%28United_States%29_front_view.png"
     },
     {
@@ -55,6 +55,36 @@
       "model": "2022",
       "price": 60000,
       "image": "https://upload.wikimedia.org/wikipedia/commons/9/91/2019_Tesla_Model_3_Performance_AWD_Front.jpg"
+    }
+  ],
+  "favorites": [
+    {
+      "id": "1",
+      "name": "Toyota Camry",
+      "model": "2021",
+      "price": 29000,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/f/fd/2025_Toyota_Camry_Hybrid_XSE_%28United_States%29_front_view.png"
+    },
+    {
+      "id": "3",
+      "name": "Ford Mustang",
+      "model": "2022",
+      "price": 45000,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/3/34/2024_Ford_Mustang_Dark_Horse.jpg"
+    },
+    {
+      "id": "5",
+      "name": "BMW 3 Series",
+      "model": "2022",
+      "price": 50000,
+      "image": "https://www.topgear.com/sites/default/files/2022/09/1-BMW-3-Series.jpg"
+    },
+    {
+      "id": "2",
+      "name": "Honda Accord",
+      "model": "2018",
+      "price": 22000,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Honda_Accord_%28CV3%29_EX_eHEV%2C_2021%2C_front.jpg/280px-Honda_Accord_%28CV3%29_EX_eHEV%2C_2021%2C_front.jpg"
     }
   ]
 }

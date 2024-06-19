@@ -9,6 +9,7 @@ import { HttpClient } from '@angular/common/http';
 export class CarService {
 
   url: string = 'http://localhost:3000/cars'
+  urlFavorites: string = 'http://localhost:3000/favorites'
 
   constructor (private http: HttpClient) {}
 
@@ -33,6 +34,15 @@ export class CarService {
 
   editCar(id:string, car: Car): Observable<any> {
     return this.http.put(`${this.url}/${id}`, car)
+  }
+
+  postCarToFavorites(car: Car) {
+    return this.http.post<Car>(this.urlFavorites, car)
+  }
+
+
+  getCarsFromFavorites(): Observable<Car[]> {
+    return this.http.get(this.urlFavorites) as Observable<Car[]>
   }
 
   

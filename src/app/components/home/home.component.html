@@ -1,1 +1,41 @@
-<p>home works!</p>
+<div class="container">
+    <h1>Car area</h1>
+
+    <div class="row">        
+
+        <!-- Search -->
+         <div class="col-12">
+            <app-search-box (onChanged)="searchChanged($event)"></app-search-box>
+         </div>
+
+        <div class="col-12">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Model</th>
+                    <th>Price</th>
+                    <th>Image</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let car of cars | search:searchStr">
+                    <th>{{car.id}}</th>
+                    <th>{{car.name}}</th>
+                    <td>{{car.model}}</td>
+                    <td>{{car.price | currency}}</td>
+                    <td>
+                        <img src="{{car.image}}" alt="car_{{car.name}}" class="img-fluid" width="200px">
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-outline-danger me-2" (click)="addToFavorites(car)">Favorites</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+
+    </div>
+</div>
