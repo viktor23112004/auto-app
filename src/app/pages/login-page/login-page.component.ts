@@ -19,6 +19,7 @@ export class LoginPageComponent {
   }
 
   login() {
+    localStorage.setItem('token', Math.random().toString())
     this.router.navigate(['/auth/home'])
   }
 

@@ -9,6 +9,7 @@ import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.com
 import { CarAddComponent } from './components/car-add/car-add.component';
 import { CarEditComponent } from './components/car-edit/car-edit.component';
 import { CarDetailsComponent } from './components/car-details/car-details.component';
+import { authGuard } from './guards/auth.guard';
 
 export const routes: Routes = [
 
@@ -26,7 +27,8 @@ export const routes: Routes = [
             {path: 'car-add', component: CarAddComponent},
             {path: 'car-edit/:id', component: CarEditComponent},
             {path: 'car-details/:id', component: CarDetailsComponent}
-        ]
+        ],
+        canActivate: [authGuard]
     },
 
     {path: '**', component: NotFoundPageComponent},

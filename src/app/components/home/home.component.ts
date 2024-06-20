@@ -6,7 +6,7 @@ import { SearchPipe } from '../../pipes/search.pipe';
 import { Car } from '../../models/car';
 import { Router } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-import { MaintenanceComponent } from '../maintenance/maintenance.component';
+
 
 @Component({
   selector: 'app-home',
@@ -48,7 +48,12 @@ export class HomeComponent implements OnInit{
   }
 
   addToFavorites(car: Car) {
-    this.carService.postCarToFavorites(car).subscribe((data) => console.log(data));
+    // this.carService.postCarToFavorites(car).subscribe((data) => console.log(data))
+    this.carService.postCarToFavorites(car).subscribe({
+      next: () => {
+        this.router.navigate(['/auth/favorites'])
+      }
+    })
     
   }
 
